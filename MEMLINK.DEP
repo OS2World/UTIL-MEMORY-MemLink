@@ -1,0 +1,29 @@
+# Make File Creation run in directory:
+#   C:\MEMLINK;
+
+# Assumed INCLUDE environment variable path:
+#   C:\TOOLKT21\C\OS2H;
+#   C:\TOOLKT21\C\OS2H\VDD;
+#   C:\TOOLKT21\ASM\OS2INC;
+#   C:\IBMCPP\INCLUDE;
+#   C:\IBMCPP\IBMCLASS;
+
+
+INCLUDE002=.
+INCLUDE002=$(INCLUDE002);$(INCLUDE)
+
+INCLUDE001=.
+INCLUDE001=$(INCLUDE001);$(INCLUDE)
+
+INCLUDE000=$(INCLUDE)
+
+
+PIPES.OBJ:  PIPES.C  \
+#  {$(INCLUDE000)}stdlib.h  \
+#  {$(INCLUDE000)}os2.h  \
+#  {$(INCLUDE000)}stdio.h  \
+#   {$(INCLUDE001)}asr.h  \
+#   {$(INCLUDE001)}msg_str.h  \
+   {$(INCLUDE001)}pipes.h  \
+   MEMLINK.MAK
+

@@ -1,0 +1,25 @@
+/*************************************************************************
+* 
+*  Filename:             mdemo.rc
+*                  
+*************************************************************************/
+#include <os2.h>
+#include "mdemo.h"
+
+ICON ID_WINDOW PRELOAD mdemo.ico
+
+MENU ID_WINDOW PRELOAD
+   {
+   SUBMENU "~Main", IDM_MAIN
+      {
+      MENUITEM "~Go", IDM_GOFAST
+      MENUITEM "Go ~Slow", IDM_GOSLOW
+      MENUITEM "~Halt", IDM_STOP
+      MENUITEM "E~xit \tF3", IDM_EXITPROG
+      }
+   }
+
+ACCELTABLE ID_WINDOW PRELOAD
+   {
+   VK_F3, IDM_EXITPROG, VIRTUALKEY
+   }

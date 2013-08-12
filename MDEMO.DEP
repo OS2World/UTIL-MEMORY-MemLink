@@ -1,0 +1,33 @@
+# IBM Developer's Workframe/2 Make File Creation run at 08:58:32 on 02/02/94
+
+# Make File Creation run in directory:
+#   C:\MEMLINK
+
+# Assumed INCLUDE environment variable path:
+#   C:\TOOLKT21\CPLUS\OS2H;
+#   C:\TOOLKT21\C\OS2H;
+#   C:\TOOLKT21\C\OS2H\VDD;
+#   C:\TOOLKT21\ASM\OS2INC;
+#   C:\IBMCPP\INCLUDE;
+#   C:\IBMCPP\IBMCLASS;
+
+
+INCLUDE002=.
+INCLUDE002=$(INCLUDE002);$(INCLUDE)
+
+INCLUDE001=.
+INCLUDE001=$(INCLUDE001);$(INCLUDE)
+
+INCLUDE000=$(INCLUDE)
+
+
+MDEMO.RES:  MDEMO.RC  \
+#  {$(INCLUDE002)}OS2.H  \
+   {$(INCLUDE002)}MDEMO.H  \
+   MDEMO.ICO  \
+   MDEMO.MAK
+
+MDEMO.OBJ:  MDEMO.C  \
+#  {$(INCLUDE000)}os2.h  \
+#  {$(INCLUDE000)}stdlib.h  \
+   MDEMO.MAK
